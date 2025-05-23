@@ -85,6 +85,37 @@ for (let i = 97; i <= 122; i++) {
     keyboardDiv.appendChild(button);
     button.addEventListener("click", e => initGame(e.target, String.fromCharCode(i)));
 }
+const playButton = document.getElementById("play");
+const pauseButton = document.getElementById("pause");
+const restartButton = document.getElementById("restart");
+
+let gamePaused = false;
+
+playButton.addEventListener("click", () => {
+    gamePaused = false;
+    resumeGame();
+});
+
+pauseButton.addEventListener("click", () => {
+    gamePaused = true;
+    pauseGame();
+});
+
+restartButton.addEventListener("click", () => {
+    restartGame();
+});
+
+function resumeGame() {
+    console.log("Game resumed");
+}
+function pauseGame() {
+    console.log("Game paused");
+    
+}
+function restartGame() {
+    console.log("Game restarted");
+    location.reload(); 
+}
 
 getRandomWord();
 playAgainBtn.addEventListener("click", getRandomWord);

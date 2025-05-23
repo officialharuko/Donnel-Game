@@ -5,6 +5,9 @@ const guessesText = document.querySelector(".guesses-text b");
 const keyboardDiv = document.querySelector(".keyboard");
 const gameModal = document.querySelector(".game-modal");
 const playAgainBtn = document.querySelector(".play-again");
+const playButton = document.getElementById("play");
+const pauseButton = document.getElementById("pause");
+const restartButton = document.getElementById("restart");
 
 let currentWord, correctLetters, wrongGuessCount;
 const maxGuesses = 6;
@@ -85,9 +88,7 @@ for (let i = 97; i <= 122; i++) {
     keyboardDiv.appendChild(button);
     button.addEventListener("click", e => initGame(e.target, String.fromCharCode(i)));
 }
-const playButton = document.getElementById("play");
-const pauseButton = document.getElementById("pause");
-const restartButton = document.getElementById("restart");
+
 
 let gamePaused = false;
 

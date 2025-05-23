@@ -5,9 +5,6 @@ const guessesText = document.querySelector(".guesses-text b");
 const keyboardDiv = document.querySelector(".keyboard");
 const gameModal = document.querySelector(".game-modal");
 const playAgainBtn = document.querySelector(".play-again");
-const playButton = document.getElementById("play");
-const pauseButton = document.getElementById("pause");
-const restartButton = document.getElementById("restart");
 
 let currentWord, correctLetters, wrongGuessCount;
 const maxGuesses = 6;
@@ -87,35 +84,6 @@ for (let i = 97; i <= 122; i++) {
     button.innerText = String.fromCharCode(i);
     keyboardDiv.appendChild(button);
     button.addEventListener("click", e => initGame(e.target, String.fromCharCode(i)));
-}
-
-
-let gamePaused = false;
-
-playButton.addEventListener("click", () => {
-    gamePaused = false;
-    resumeGame();
-});
-
-pauseButton.addEventListener("click", () => {
-    gamePaused = true;
-    pauseGame();
-});
-
-restartButton.addEventListener("click", () => {
-    restartGame();
-});
-
-function resumeGame() {
-    console.log("Game resumed");
-}
-function pauseGame() {
-    console.log("Game paused");
-    
-}
-function restartGame() {
-    console.log("Game restarted");
-    location.reload(); 
 }
 
 getRandomWord();

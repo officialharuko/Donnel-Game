@@ -126,19 +126,6 @@ body {
 }
 :where(.game-modal, .keyboard) button:hover {
 	background: #8286c9;
-.menu {
-    position: absolute;
-    top: 20px;
-    right: 20px;
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-}
-
-.menu button {
-    padding: 10px;
-    font-size: 16px;
-    cursor: pointer;
 }
 .game-modal {
 	position: fixed;
